@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Murmur – a to-do list you can talk to</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>Murmur</h1>
+  <p class="lead">A to-do list you can talk to. Add, finish and clear tasks by voice.</p>
+
+  <section class="voice">
+    <button id="mic" class="mic" aria-pressed="false" aria-label="Start voice command">
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+    </button>
+    <div class="say">
+      <p id="heard" class="heard"></p>
+      <p id="msg" class="msg" role="status"></p>
+    </div>
+  </section>
+
+  <form id="form" class="add">
+    <input id="in" type="text" maxlength="80" placeholder="Or type a task" aria-label="New task" autocomplete="off">
+    <button class="primary" type="submit">Add</button>
+  </form>
+
+  <div class="filters" role="group" aria-label="Filter tasks">
+    <button data-f="all">All</button><button data-f="active">Active</button><button data-f="done">Done</button>
+  </div>
+  <ol id="list"></ol>
+  <p id="empty" hidden></p>
+
+  <details class="tips">
+    <summary>What can I say?</summary>
+    <ul>
+      <li>“Add buy milk”</li>
+      <li>“Done 2” or “done milk”</li>
+      <li>“Delete 3”, then “undo” to bring it back</li>
+      <li>“Clear completed”</li>
+      <li>“Show active”, “show done” or “show all”</li>
+      <li>“Read my list”</li>
+    </ul>
+  </details>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
